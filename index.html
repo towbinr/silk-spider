@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:azure;" onload="typeWriter()" onkeydown="passWord()">
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Welcome User. Press any key to type in password and continue.';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+} 
+</script>
+
+<script>
+        function passWord() {
+        var testV = 1;
+        var pass1 = prompt('Enter Password',' ');
+        while (testV < 3) {
+        if (!pass1) 
+        history.go(-1);
+        if (pass1.toLowerCase() == "pmoneyspider2099") {
+        alert('Acess Granted');
+        break;
+        } 
+        testV+=1;
+        var pass1 = 
+        prompt('Access Denied - Password Incorrect, Please Try 					Again.','Password');
+        }
+        if (pass1.toLowerCase()!="password" & testV ==3) 
+        history.go(-1);
+        return "";
+        } 
+</script>
+
+
+</body>
+</html>
